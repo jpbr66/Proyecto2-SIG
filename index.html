@@ -70,12 +70,12 @@
         
         
         
-        var imageUrl = 'concidenciaTembloresRadom.png';
+        var imageUrl = 'concidenciaTembloresRandom.png';
         var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var concidenciaTembloresRadom = L.imageOverlay(imageUrl, latLngBounds, {
+        var concidenciaTembloresRandom = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -107,19 +107,10 @@
 	layerControl.addOverlay(random, "Puntos random");
         layerControl.addOverlay(tembloresR, "Temblores raster");
         layerControl.addOverlay(randomR, "Puntos random raster");
-        layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
+        layerControl.addOverlay(concidenciaTembloresRandom, "Coincidencia puntos random y temblores");
 	layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
         
-        
-        
-        /*L.geoJSON(someGeojsonFeature, {
-            pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, geojsonMarkerOptions);
-            }
-        }).addTo(map);
-/*        L.marker([9.86116, -83.89304]).addTo(map)
-            .bindPopup('Residencial Vista Real')
-            .openPopup();*/
+	 
         </script> 
 </body>
 </html>
