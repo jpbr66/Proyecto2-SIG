@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="map" style="height: 630px"></div>
-<!--     <script>
+    <script>
 //         var map = L.map('map').setView([9.7, -84], 8);
 //         var myLayer = L.geoJSON().addTo(map);
         
@@ -108,6 +108,9 @@
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         });
+	    
+	const mapboxAttribution = 'Map data © OpenStreetMap contributors, Imagery © Mapbox';
+        const mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
         var streets = L.tileLayer(mapboxUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
         var map = L.map('map', {
             center: [39.73, -104.99],
@@ -152,8 +155,8 @@
 /*        L.marker([9.86116, -83.89304]).addTo(map)
             .bindPopup('Residencial Vista Real')
             .openPopup();*/
-        </script>  -->
-    <script>
+        </script> 
+<!--     <script>
         const cities = L.layerGroup();
         const mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
         const mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
@@ -193,6 +196,6 @@
         
         layerControl.addBaseLayer(satellite, 'Satellite'); \
         layerControl.addOverlay(parks, 'Parks'); 
-    </script>
+    </script> -->
 </body>
 </html>
