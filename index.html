@@ -93,13 +93,16 @@
 //         $.getJSON('outVectTemblores.geojson', function (data) {
 //             myLayer.addData(data);
 //         });
+        var streets = L.tileLayer(mapboxUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
         var baseMaps = {
+            "Mapbox Streets": streets
         };
 
         var overlayMaps = {
             "Cities": cities
         };
-        var layerControl = L.control.layers(myLayer, overlayMaps).addTo(map);
+        
+        var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
         layerControl.addOverlay(spline, "Mapa de calor");
         layerControl.addOverlay(temblores, "Temblores");
         layerControl.addOverlay(random, "Puntos random raster");
