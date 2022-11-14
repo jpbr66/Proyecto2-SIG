@@ -28,61 +28,36 @@
             cantones.addData(data);
         });
         
-        var imageUrl = 'spline.png';
         var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
-        var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
 
-        var spline = L.imageOverlay(imageUrl, latLngBounds, {
+        var spline = L.imageOverlay('spline.png', latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
-            alt: altText,
+            alt: 'Mapa de calor',
             interactive: true
         });
         
-        
-        
-        var imageUrl = 'temblores.png';
-        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
-        var altText = 'Mapa de calor';
-        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
-        
-        var tembloresR = L.imageOverlay(imageUrl, latLngBounds, {
+        var tembloresR = L.imageOverlay('temblores.png', latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
-            alt: altText,
+            alt: 'Temblores Raster',
             interactive: true
         });
         
-        
-        
-        var imageUrl = 'random.png';
-        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
-        var altText = 'Mapa de calor';
-        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
-        
-        var randomR = L.imageOverlay(imageUrl, latLngBounds, {
+        var randomR = L.imageOverlay('random.png', latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
-            alt: altText,
+            alt: 'Random Raster',
             interactive: true
         });
         
-        
-        
-        var imageUrl = 'concidenciaTembloresRandom.png';
-        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
-        var altText = 'Mapa de calor';
-        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
-        
-        var concidenciaTembloresRandom = L.imageOverlay(imageUrl, latLngBounds, {
+        var concidenciaTembloresRandom = L.imageOverlay('concidenciaTembloresRandom.png', latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
-            alt: altText,
+            alt: 'Coincidencia Temblores-Random',
             interactive: true
         });
-	    
-	    
         
          $.getJSON('temblores.geojson', function (data) {
              temblores.addData(data);
