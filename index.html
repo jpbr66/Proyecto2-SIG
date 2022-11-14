@@ -25,10 +25,10 @@
             myLayer.addData(data);
         });
         
-        var imageUrl = 'spline.gtiff';
+        var imageUrl = 'spline.png';
         var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
         var altText = 'Mapa de calor';
-        var latLngBounds = L.latLngBounds([[9.799311, -84.118464], [9.68202047785919, -84.33]]);
+        var latLngBounds = L.latLngBounds([[-85.60608539732317,11.22446504527175], [-82.90100028589028,8.038414438887674]]);
 
         var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
