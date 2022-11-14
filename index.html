@@ -17,8 +17,12 @@
 
 <body>
     <div id="map" style="height: 630px"></div>
+    <embed width=200 height=200
+    src="spline.gtiff" type="image/tiff"
+    negative=yes>
     <script>
         var map = L.map('map').setView([9.7, -84], 8);
+        var myLayer = L.geoJSON().addTo(map);
         
         $.get('geo_cantones.geojson', function (data) {
             myLayer.addData(data);
