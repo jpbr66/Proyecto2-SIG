@@ -19,7 +19,6 @@
     <div id="map" style="height: 630px"></div>
     <script>
         var map = L.map('map').setView([9.7, -84], 8);
-        var myLayer = L.geoJSON().addTo(map);
         
         $.get('geo_cantones.geojson', function (data) {
             myLayer.addData(data);
