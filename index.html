@@ -19,11 +19,14 @@
     <div id="map" style="height: 630px"></div>
     <script>
         var map = L.map('map').setView([9.7, -84], 8);
-        var myLayer = L.geoJSON();//.addTo(map);
+        var cantones = L.geoJSON();//.addTo(map);
+	var temblores = L.geoJSON();
+	var random = L.geoJSON();
+	var outVectTemblores = L.geoJSON();
         
-//         $.get('geo_cantones.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        $.get('geo_cantones.geojson', function (data) {
+            cantones.addData(data);
+        });
         
         var imageUrl = 'spline.png';
         var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
@@ -81,23 +84,18 @@
 	    
 	    
         
-//          $.getJSON('temblores.geojson', function (data) {
-//              myLayer.addData(data);
-//          });
+         $.getJSON('temblores.geojson', function (data) {
+             myLayer.addData(data);
+         });
         
-//         $.getJSON('random.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        $.getJSON('random.geojson', function (data) {
+            myLayer.addData(data);
+        });
         
-//         $.getJSON('outVectTemblores.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        $.getJSON('outVectTemblores.geojson', function (data) {
+            myLayer.addData(data);
+        });
         
-//         var map = L.map('map').setView([51.505, -0.09], 13);
-
-//         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//         }).addTo(map);
         var littleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.'),
             denver    = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.'),
             aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
@@ -125,26 +123,18 @@
 //         };
 
         var overlayMaps = {
-            "Cities": cities
-	    //"Mapa de calor": spline2
+	    "Mapa de calor": spline
         };
         
         var layerControl = L.control.layers("", overlayMaps).addTo(map);
         
-        var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.'),
-            rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
-
-        var parks = L.layerGroup([crownHill, rubyHill]);
-//         var satellite = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
-
-//         layerControl.addBaseLayer(satellite, "Satellite");
-        layerControl.addOverlay(parks, "Parks");
-        
-//         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
-        layerControl.addOverlay(spline, "Mapa de calor");
-        layerControl.addOverlay(temblores, "Temblores");
+        layerControl.addOverlay(cantones, "Cantones");
+	layerControl.addOverlay(temblores, "Temblores");
+	layerControl.addOverlay(random, "Puntos random");
+        layerControl.addOverlay(temblores, "Temblores raster");
         layerControl.addOverlay(random, "Puntos random raster");
         layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
+	layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
         
         
         
