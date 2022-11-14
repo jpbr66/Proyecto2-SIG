@@ -130,14 +130,14 @@
         
         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
         
-//         var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.'),
-//             rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
+        var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.'),
+            rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
 
-//         var parks = L.layerGroup([crownHill, rubyHill]);
-//         var satellite = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+        var parks = L.layerGroup([crownHill, rubyHill]);
+        var satellite = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
 
-//         layerControl.addBaseLayer(satellite, "Satellite");
-//         layerControl.addOverlay(parks, "Parks");
+        layerControl.addBaseLayer(satellite, "Satellite");
+        layerControl.addOverlay(parks, "Parks");
         
 //         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 //         layerControl.addOverlay(spline, "Mapa de calor");
