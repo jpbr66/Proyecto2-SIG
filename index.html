@@ -38,7 +38,7 @@
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
             interactive: true
-        });
+        }).addto(map);
         
         
         
@@ -47,7 +47,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var temblores = L.imageOverlay(imageUrl, latLngBounds, {
+        var tembloresR = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -61,7 +61,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var random = L.imageOverlay(imageUrl, latLngBounds, {
+        var randomR = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -131,8 +131,8 @@
         layerControl.addOverlay(cantones, "Cantones");
 	layerControl.addOverlay(temblores, "Temblores");
 	layerControl.addOverlay(random, "Puntos random");
-        layerControl.addOverlay(temblores, "Temblores raster");
-        layerControl.addOverlay(random, "Puntos random raster");
+        layerControl.addOverlay(tembloresR, "Temblores raster");
+        layerControl.addOverlay(randomR, "Puntos random raster");
         layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
 	layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
         
