@@ -25,13 +25,10 @@
             myLayer.addData(data);
         });
         
-        $.get('spline.gtiff', function (data) {
+        $.get('spline.png', function (data) {
             myLayer.addData(data);
         });
         
-        myLayer.appData(PSPDFKit.load({
-          document: 'spline.gtiff'
-        }););
         
 //         $.getJSON('apartamentos.geojson', function (data) {
 //             myLayer.addData(data);
