@@ -80,7 +80,7 @@
 //         }).addTo(map);
         
         
-        
+        	var spline2 = L.layerGroup([spline]);
         
 //          $.getJSON('temblores.geojson', function (data) {
 //              myLayer.addData(data);
@@ -127,7 +127,7 @@
 
         var overlayMaps = {
             "Cities": cities
-	    "Mapa de calor": spline
+	    "Mapa de calor": spline2
         };
         
         var layerControl = L.control.layers("", overlayMaps).addTo(map);
