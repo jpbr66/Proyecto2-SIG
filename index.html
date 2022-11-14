@@ -85,15 +85,15 @@
 	    
         
          $.getJSON('temblores.geojson', function (data) {
-             myLayer.addData(data);
+             temblores.addData(data);
          });
         
         $.getJSON('random.geojson', function (data) {
-            myLayer.addData(data);
+            random.addData(data);
         });
         
         $.getJSON('outVectTemblores.geojson', function (data) {
-            myLayer.addData(data);
+            outVectTemblores.addData(data);
         });
 
         var overlayMaps = {
