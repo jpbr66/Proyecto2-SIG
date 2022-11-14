@@ -25,8 +25,12 @@
             myLayer.addData(data);
         });
         
-        $.get('spline.gtiff', function (data) {
-            myLayer.addData(data);
+        const source = new GeoTIFF({
+          sources:
+            {
+              url: 'spline.gtiff'
+            },
+
         });
         
 //         $.getJSON('apartamentos.geojson', function (data) {
