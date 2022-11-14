@@ -104,10 +104,10 @@
             aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
             golden    = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.');
         var cities = L.layerGroup([littleton, denver, aurora, golden]);
-        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        });
+//         var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//             maxZoom: 19,
+//             attribution: '© OpenStreetMap'
+//         });
 	    
 	const mapboxAttribution = 'Map data © OpenStreetMap contributors, Imagery © Mapbox';
         const mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
@@ -120,7 +120,7 @@
 
         
         var baseMaps = {
-            "OpenStreetMap": osm,
+            //"OpenStreetMap": osm,
             "Mapbox Streets": streets
         };
 
