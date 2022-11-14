@@ -25,7 +25,7 @@
             myLayer.addData(data);
         });
         
-        var imageUrl = 'spline3.png';
+        var imageUrl = 'spline.png';
         var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
@@ -38,41 +38,61 @@
         }).addTo(map);
         
         
-//         $.getJSON('apartamentos.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
         
-//         $.getJSON('caminos.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        var imageUrl = 'temblores.png';
+        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
+        var altText = 'Mapa de calor';
+        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-//         $.getJSON('campos.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+            opacity: 0.8,
+            errorOverlayUrl: errorOverlayUrl,
+            alt: altText,
+            interactive: true
+        }).addTo(map);
         
-//         $.getJSON('casas.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
         
-//         $.getJSON('lotes_baldios.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
         
-//         $.getJSON('parqueos.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        var imageUrl = 'random.png';
+        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
+        var altText = 'Mapa de calor';
+        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-//         $.getJSON('parques.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+            opacity: 0.8,
+            errorOverlayUrl: errorOverlayUrl,
+            alt: altText,
+            interactive: true
+        }).addTo(map);
         
-//         $.getJSON('seguridad.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
         
-//         $.getJSON('rotondas.geojson', function (data) {
-//             myLayer.addData(data);
-//         });
+        
+        var imageUrl = 'concidenciaTembloresRadom.png';
+        var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';//8.038414438887674,-82.90100028589028    11.22446504527175,-85.60608539732317
+        var altText = 'Mapa de calor';
+        var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
+        
+        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+            opacity: 0.8,
+            errorOverlayUrl: errorOverlayUrl,
+            alt: altText,
+            interactive: true
+        }).addTo(map);
+        
+        
+        
+        
+         $.getJSON('temblores.geojson', function (data) {
+             myLayer.addData(data);
+         });
+        
+        $.getJSON('random.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('outVectTemblores.geojson', function (data) {
+            myLayer.addData(data);
+        });
         
         
         
