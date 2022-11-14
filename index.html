@@ -30,7 +30,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
 
-        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+        var spline = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -44,7 +44,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+        var temblores = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -58,7 +58,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+        var random = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -72,7 +72,7 @@
         var altText = 'Mapa de calor';
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
         
-        var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+        var concidenciaTembloresRadom = L.imageOverlay(imageUrl, latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
@@ -82,19 +82,22 @@
         
         
         
-         $.getJSON('temblores.geojson', function (data) {
-             myLayer.addData(data);
-         });
+//          $.getJSON('temblores.geojson', function (data) {
+//              myLayer.addData(data);
+//          });
         
-        $.getJSON('random.geojson', function (data) {
-            myLayer.addData(data);
-        });
+//         $.getJSON('random.geojson', function (data) {
+//             myLayer.addData(data);
+//         });
         
-        $.getJSON('outVectTemblores.geojson', function (data) {
-            myLayer.addData(data);
-        });
+//         $.getJSON('outVectTemblores.geojson', function (data) {
+//             myLayer.addData(data);
+//         });
         
-        
+        layerControl.addOverlay(spline, "Mapa de calor");
+        layerControl.addOverlay(temblores, "Temblores");
+        layerControl.addOverlay(random, "Puntos random raster");
+        layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
         
         /*L.geoJSON(someGeojsonFeature, {
             pointToLayer: function (feature, latlng) {
