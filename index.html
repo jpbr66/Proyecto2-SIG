@@ -93,11 +93,19 @@
 //         $.getJSON('outVectTemblores.geojson', function (data) {
 //             myLayer.addData(data);
 //         });
-        
+        var baseMaps = {
+        };
+
+        var overlayMaps = {
+            "Cities": cities
+        };
+        var layerControl = L.control.layers(myLayer, overlayMaps).addTo(map);
         layerControl.addOverlay(spline, "Mapa de calor");
         layerControl.addOverlay(temblores, "Temblores");
         layerControl.addOverlay(random, "Puntos random raster");
         layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
+        
+        
         
         /*L.geoJSON(someGeojsonFeature, {
             pointToLayer: function (feature, latlng) {
