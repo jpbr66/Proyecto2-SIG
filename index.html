@@ -49,7 +49,7 @@
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
             interactive: true
-        }).addTo(map);
+        });
         
         
         
@@ -63,7 +63,7 @@
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
             interactive: true
-        }).addTo(map);
+        });
         
         
         
@@ -77,13 +77,13 @@
             errorOverlayUrl: errorOverlayUrl,
             alt: altText,
             interactive: true
-        }).addTo(map);
+        });
 	    
 	    
         
-         $.getJSON('temblores.geojson', function (data) {
-             myLayer.addData(data);
-         });
+//          $.getJSON('temblores.geojson', function (data) {
+//              myLayer.addData(data);
+//          });
         
 //         $.getJSON('random.geojson', function (data) {
 //             myLayer.addData(data);
@@ -141,10 +141,10 @@
         layerControl.addOverlay(parks, "Parks");
         
 //         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
-         layerControl.addOverlay(spline, "Mapa de calor");
-//         layerControl.addOverlay(temblores, "Temblores");
-//         layerControl.addOverlay(random, "Puntos random raster");
-//         layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
+        layerControl.addOverlay(spline, "Mapa de calor");
+        layerControl.addOverlay(temblores, "Temblores");
+        layerControl.addOverlay(random, "Puntos random raster");
+        layerControl.addOverlay(concidenciaTembloresRadom, "Coincidencia puntos random y temblores");
         
         
         
