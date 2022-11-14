@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+            integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+            crossorigin=""></script>
+    <script src=
+"https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+</head>
+
+<body>
+    <div id="map" style="height: 630px"></div>
+    <script>
+        var map = L.map('map').setView([9.86116, -83.89304], 18);
+        var myLayer = L.geoJSON().addTo(map);
+        
+        $.getJSON('postes.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('calles.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('apartamentos.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('caminos.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('campos.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('casas.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('lotes_baldios.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('parqueos.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('parques.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('seguridad.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        $.getJSON('rotondas.geojson', function (data) {
+            myLayer.addData(data);
+        });
+        
+        
+        
+        /*L.geoJSON(someGeojsonFeature, {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, geojsonMarkerOptions);
+            }
+        }).addTo(map);
+/*        L.marker([9.86116, -83.89304]).addTo(map)
+            .bindPopup('Residencial Vista Real')
+            .openPopup();*/
+    </script>
+</body>
+</html>
