@@ -17,9 +17,6 @@
 
 <body>
     <div id="map" style="height: 630px"></div>
-    <embed width=200 height=200
-    src="spline.gtiff" type="image/tiff"
-    negative=yes>
     <script>
         var map = L.map('map').setView([9.7, -84], 8);
         var myLayer = L.geoJSON().addTo(map);
@@ -31,6 +28,10 @@
         $.get('spline.gtiff', function (data) {
             myLayer.addData(data);
         });
+        
+        myLayer.appData(PSPDFKit.load({
+          document: 'spline.gtiff'
+        }););
         
 //         $.getJSON('apartamentos.geojson', function (data) {
 //             myLayer.addData(data);
