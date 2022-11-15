@@ -64,11 +64,11 @@
          });
         
         $.getJSON('modaGasolinerasVect.geojson', function (data) {
-            random.addData(data);
+            modaGasolinerasVect.addData(data);
         });
         
         $.getJSON('modaEscuelasVect.geojson', function (data) {
-            outVectTemblores.addData(data);
+            modaEscuelasVect.addData(data);
         });
 
         var overlayMaps = {
