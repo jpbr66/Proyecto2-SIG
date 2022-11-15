@@ -21,8 +21,8 @@
         var map = L.map('map').setView([9.7, -84], 8);
         var cantones = L.geoJSON();//.addTo(map);
 	var temblores = L.geoJSON();
-	var random = L.geoJSON();
-	var outVectTemblores = L.geoJSON();
+	var modaGasolinerasVect = L.geoJSON();
+	var modaEscuelasVect = L.geoJSON();
         
         $.get('geo_cantones.geojson', function (data) {
             cantones.addData(data);
@@ -45,29 +45,29 @@
             interactive: true
         });
         
-        var randomR = L.imageOverlay('random.png', latLngBounds, {
-            opacity: 0.8,
-            errorOverlayUrl: errorOverlayUrl,
-            alt: 'Random Raster',
-            interactive: true
-        });
+//         var randomR = L.imageOverlay('random.png', latLngBounds, {
+//             opacity: 0.8,
+//             errorOverlayUrl: errorOverlayUrl,
+//             alt: 'Random Raster',
+//             interactive: true
+//         });
         
-        var concidenciaTembloresRandom = L.imageOverlay('concidenciaTembloresRandom.png', latLngBounds, {
-            opacity: 0.8,
-            errorOverlayUrl: errorOverlayUrl,
-            alt: 'Coincidencia Temblores-Random',
-            interactive: true
-        });
+//         var concidenciaTembloresRandom = L.imageOverlay('concidenciaTembloresRandom.png', latLngBounds, {
+//             opacity: 0.8,
+//             errorOverlayUrl: errorOverlayUrl,
+//             alt: 'Coincidencia Temblores-Random',
+//             interactive: true
+//         });
         
          $.getJSON('temblores.geojson', function (data) {
              temblores.addData(data);
          });
         
-        $.getJSON('random.geojson', function (data) {
+        $.getJSON('modaGasolinerasVect.geojson', function (data) {
             random.addData(data);
         });
         
-        $.getJSON('outVectTemblores.geojson', function (data) {
+        $.getJSON('modaEscuelasVect.geojson', function (data) {
             outVectTemblores.addData(data);
         });
 
@@ -79,11 +79,11 @@
         
         layerControl.addOverlay(cantones, "Cantones");
 	layerControl.addOverlay(temblores, "Temblores");
-	layerControl.addOverlay(random, "Puntos random");
+	layerControl.addOverlay(modaGasolinerasVect, "Moda de gasolineras con temblores (Vector)");
+        layerControl.addOverlay(modaEscuelasVect, "Moda de escuelas con temblores (Vector)");
         layerControl.addOverlay(tembloresR, "Temblores raster");
-        layerControl.addOverlay(randomR, "Puntos random raster");
-        layerControl.addOverlay(concidenciaTembloresRandom, "Coincidencia puntos random y temblores");
-	layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
+        //layerControl.addOverlay(concidenciaTembloresRandom, "Coincidencia puntos random y temblores");
+	//layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
         
 	 
         </script> 
