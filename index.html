@@ -20,17 +20,7 @@
     <script>
         var map = L.map('map').setView([9.7, -84], 8);
         var cantones = L.geoJSON();//.addTo(map);
-	var temblores = L.geoJSON({
-	    pointToLayer: function () {
-		return L.circleMarker('', {
-				radius: 8,
-				fillColor: '#ff7800',
-				color: '#000',
-				weight: 1,
-				opacity: 1,
-				fillOpacity: 0.8
-			});
-	    });
+	var temblores = L.geoJSON();
 	var random = L.geoJSON();
 	var outVectTemblores = L.geoJSON();
         
