@@ -51,4 +51,4 @@ Con esto concluíamos la parte de generación de mapas
 ---
 
 ## Mapas publicados
-Los mapas publicados se pueden encontrar en el siguiente link: (https://proyecto2-sig.netlify.app/)
+Los mapas publicados se pueden encontrar en el siguiente link: https://proyecto2-sig.netlify.app/
