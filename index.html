@@ -32,21 +32,21 @@
         var latLngBounds = L.latLngBounds([[11.219869545334685,-85.9502309618015], [8.03962609730269,-82.55270240995831]]);
 
         var spline = L.imageOverlay('spline.png', latLngBounds, {
-            opacity: 0.8,
+            opacity: 1,
             errorOverlayUrl: errorOverlayUrl,
             alt: 'Mapa de calor',
             interactive: true
         });
         
         var subduccion = L.imageOverlay('SubduccionLocalHeap.png', latLngBounds, {
-            opacity: 0.8,
+            opacity: 1,
             errorOverlayUrl: errorOverlayUrl,
             alt: 'Subduccion',
             interactive: true
         });
         
         var fallamiento_local = L.imageOverlay('FallamientoLocalHeap.png', latLngBounds, {
-            opacity: 0.8,
+            opacity: 1,
             errorOverlayUrl: errorOverlayUrl,
             alt: 'Fallamiento local',
             interactive: true
