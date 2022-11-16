@@ -42,13 +42,35 @@ Teniendo esto lo que faltaba era ajustar los colores:
 
 Con esto concluíamos la parte de generación de mapas
 
----
+
 
 ## Análisis de datos
 
+Primero se cargaron los mapas de escuelas y gasolineras con los comandos:
+
+    v.import input=escuelas.shp output=escuelas
+    v.import input=gasolineras.shp output=gasolineras
+    
+Posteriormente era necesario convertirlos a raster con los siguientes comandos:
+
+    v.to.vect input=escuelas output=escuelasRaster
+    v.to.vect input=gasolineras output=gasolinerasRaster
+
+Luego para crear el filtrado de las escuelas que estaban en los lugares donde más tiembla se usó el comando:
+
+    r.mapcalc query="escuelasModa=mod(spline, escuelaRaster)"
+
+Y para crear el filtrado de las gasolineras que estaban en los lugares donde más tiembla se usó el comando:
+
+    r.mapcalc query="gasolinerasModa=mod(spline, escuelaRaster)"
+
+Para crear los heatmap de subduccion y fallamiento local se usó el comando:
+
+    v.surf.idw
+
+Los datos se agregaron en la ventana
 
 
----
 
 ## Mapas publicados
 Los mapas publicados se pueden encontrar en el siguiente link: https://proyecto2-sig.netlify.app/
