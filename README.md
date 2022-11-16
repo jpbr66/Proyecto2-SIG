@@ -23,3 +23,16 @@ Cargamos todos estos para visualizar los datos, sin embargo solo hicimos uso de 
 Posteriormente cargamos la capa de temblores con el siguiente comando:
 
     `v.import input=temblores.shp output=temblores`
+
+Después creamos una capa de puntos random con el siguiente comando:
+
+    `v.random -a output=random npoints=10 restrict=geo_Cantones layer=1`
+
+Seguidamente realizamos una interpolación a esta capa con el comando:
+
+    `v.surf.rst in=random elev=interpolacion`
+    
+Después realizamos la interpolación de temblores con el siguiente comando:
+
+    `v.surf.rst in=temblores elev=spline zcolumn=MAGNITUD`
+    
