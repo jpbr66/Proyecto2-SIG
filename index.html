@@ -38,26 +38,19 @@
             interactive: true
         });
         
-        var tembloresR = L.imageOverlay('temblores.png', latLngBounds, {
+        var subduccion = L.imageOverlay('SubduccionLocalHeap.png', latLngBounds, {
             opacity: 0.8,
             errorOverlayUrl: errorOverlayUrl,
-            alt: 'Temblores Raster',
+            alt: 'Subduccion',
             interactive: true
         });
         
-//         var randomR = L.imageOverlay('random.png', latLngBounds, {
-//             opacity: 0.8,
-//             errorOverlayUrl: errorOverlayUrl,
-//             alt: 'Random Raster',
-//             interactive: true
-//         });
-        
-//         var concidenciaTembloresRandom = L.imageOverlay('concidenciaTembloresRandom.png', latLngBounds, {
-//             opacity: 0.8,
-//             errorOverlayUrl: errorOverlayUrl,
-//             alt: 'Coincidencia Temblores-Random',
-//             interactive: true
-//         });
+        var fallamiento_local = L.imageOverlay('FallamientoLocalHeap.png', latLngBounds, {
+            opacity: 0.8,
+            errorOverlayUrl: errorOverlayUrl,
+            alt: 'Fallamiento local',
+            interactive: true
+        });
         
          $.getJSON('temblores.geojson', function (data) {
              temblores.addData(data);
@@ -81,7 +74,8 @@
 	layerControl.addOverlay(temblores, "Temblores");
 	layerControl.addOverlay(modaGasolinerasVect, "Moda de gasolineras con temblores (Vector)");
         layerControl.addOverlay(modaEscuelasVect, "Moda de escuelas con temblores (Vector)");
-        layerControl.addOverlay(tembloresR, "Temblores raster");
+        layerControl.addOverlay(subduccion, "Filtrado por subduccion");
+	layerControl.addOverlay(fallamiento_local, "Filtrado por fallamiento local");
         //layerControl.addOverlay(concidenciaTembloresRandom, "Coincidencia puntos random y temblores");
 	//layerControl.addOverlay(outVectTemblores, "Temblores (rast to vect)");
         
